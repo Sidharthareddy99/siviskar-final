@@ -104,7 +104,6 @@ const Page3 = () => {
   className="absolute object-cover rounded-[30px] h-[82vh] w-full hidden"
   style={{ transform: 'scaleX(0.8) scaleY(0.05) translateY(300vh)' }} // Adjust translateY value as needed
   autoPlay
-  loop
 />
       <div className="page3-svg" ref={svgRef}>
         <svg fill="none" viewBox="0 0 210 210" className="bg-black  h-20 w-20 md:h-[10.7vw] md:w-[10.7vw] rounded-full " >
