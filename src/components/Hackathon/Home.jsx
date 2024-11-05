@@ -1,7 +1,14 @@
 import React from 'react'
 import BackGround from './BackGround'
 import { ShimmerButtonDemo } from '../ShimmerButton/ShimmerButtonDemo'
+import { useNavigate } from 'react-router-dom';
+
 const Home = () => {
+    const navigate = useNavigate();
+
+    const handleLogoClick = () => {
+        navigate('/');
+    };
   return (
     <div
     id='hack-home'
@@ -17,10 +24,12 @@ const Home = () => {
             <div class="flex items-center justify-between">
                 <div class="flex-shrink-0">
                 <img
-                  className="w-auto h-10"
-                  src="https://i.ibb.co/pfZ3yc5/logo.png"
-                  alt=""
-                  />
+                    className="w-auto h-10"
+                    src="https://i.ibb.co/pfZ3yc5/logo.png"
+                    alt=""
+                    onClick={handleLogoClick}
+                    style={{ cursor: 'pointer' }}
+              />
                 </div>
 
                 <div class="flex lg:hidden">

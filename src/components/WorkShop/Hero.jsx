@@ -1,6 +1,13 @@
 import React from 'react'
 import { ShimmerButtonDemo } from '../ShimmerButton/ShimmerButtonDemo'
+import { useNavigate } from 'react-router-dom';
+
 const Hero = () => {
+    const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
   return (
     <div 
     id='workshop-home'
@@ -11,7 +18,13 @@ const Hero = () => {
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <div class="flex-shrink-0">
                     <a href="#" title="" class="flex">
-                        <img class="w-auto h-8" src="https://i.ibb.co/KhfVyHB/logo-semi.png" alt="" />
+                    <img
+                        className="w-auto h-10"
+                        src="https://i.ibb.co/pfZ3yc5/logo.png"
+                        alt=""
+                        onClick={handleLogoClick}
+                        style={{ cursor: 'pointer' }}
+              />
                     </a>
                 </div>
                <div className="ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">

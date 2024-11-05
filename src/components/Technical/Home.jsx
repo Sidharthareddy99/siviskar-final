@@ -1,7 +1,14 @@
 import React from 'react'
 import { ShimmerButtonDemo } from '../ShimmerButton/ShimmerButtonDemo'
+import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
   return (
     <div id='tech-home' className="bg-gradient-to-b bg-black h-screen text-white" style={{ backgroundImage: 'url(https://i.ibb.co/zPj1s3d/Home-page-Workshop.png)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <header className="">
@@ -9,7 +16,13 @@ const Home = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex-shrink-0">
               <a href="#" title="" className="flex">
-                <img className="w-auto h-8" src="https://i.ibb.co/pfZ3yc5/logo.png" alt="" />
+              <img
+                className="w-auto h-10"
+                src="https://i.ibb.co/pfZ3yc5/logo.png"
+                alt=""
+                onClick={handleLogoClick}
+                style={{ cursor: 'pointer' }}
+              />
               </a>
             </div>
 

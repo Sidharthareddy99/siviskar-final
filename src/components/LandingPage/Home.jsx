@@ -2,8 +2,15 @@ import React, { useEffect } from 'react';
 import AnimatedGradientText from "../AnimatedGradientText/AnimatedGradientText";
 import { RainbowButtonDemo } from "../RainbowButton/RainbowButtonDemo";
 import { gsap } from 'gsap';
+import { useNavigate } from 'react-router-dom';
 import {useGSAP} from '@gsap/react'
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   useGSAP(()=>{
     const tl = gsap.timeline();
     tl.from('#Home', {
@@ -56,11 +63,13 @@ const Home = () => {
         <div className='p-4 md:p-7'>
           <div className='flex justify-between'>
             <div id='nav'>
-              <img
-                className="w-auto h-10"
-                src="https://i.ibb.co/qrhhX9Y/logo-semi.png"
-                alt="Logo"
-              />
+            <img
+              className="w-auto h-10"
+              src="https://i.ibb.co/qrhhX9Y/logo-semi.png"
+              alt="Logo"
+              onClick={handleLogoClick}
+              style={{ cursor: 'pointer' }}
+            />
             </div>
             <div id='nav' className='flex ml-3 gap-10'>
               <a href="#home" className='font-neue hidden md:block'>Home</a>
